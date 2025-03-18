@@ -21,9 +21,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
 				sh 'docker version'
-				sh "docker build -t pratima30/bankapp-eta-app:${BUILD_NUMBER} ."
+				sh "docker build -t pratima30/health-care-eta-deploy:${BUILD_NUMBER} ."
 				sh 'docker image list'
-				sh "docker tag pratima30/bankapp-eta-app:${BUILD_NUMBER} pratima30/bankapp-eta-app:latest"
+				sh "docker tag pratima30/health-care-eta-deploy:${BUILD_NUMBER} pratima30/bankapp-eta-app:latest"
             }
         }
 		stage('Login2DockerHub') {
@@ -34,7 +34,7 @@ pipeline {
 		}
 		stage('Publish_to_Docker_Registry') {
 			steps {
-				sh "docker push pratima30/bankapp-eta-app"
+				sh "docker push pratima30/health-care-eta-deploy"
 			}
 		}
         stage('Deploy to Kubernetes Cluster') {
