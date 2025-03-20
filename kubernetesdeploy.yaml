@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: health-care-eta-deploy
   labels:
-    app: health-care-eta-deploy:latest
+    app: health-care-eta-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: health-care-eta-deploy:latest
+      app: health-care-eta-deploy
   template:
     metadata:
       labels:
-        app: health-care-eta-deploy:latest
+        app: health-care-eta-deploy
     spec:
       containers:
-      - name: health-care-eta-deploy:latest
-        image: pratima30/health-care-eta-deploy:latest
+      - name: health-care-eta-deploy
+        image: pratima30/health-care-eta-deploy
         ports:
         - containerPort: 8082
 ---
@@ -25,10 +25,10 @@ kind: Service
 metadata:
   name:  health-care-np-service
   labels:
-    app: health-care-eta-deploy:latest
+    app: health-care-eta-deploy
 spec:
   selector:
-    app: health-care-eta-deploy:latest
+    app: health-care-eta-deploy
   type: NodePort
   ports:
   - nodePort: 31030  
