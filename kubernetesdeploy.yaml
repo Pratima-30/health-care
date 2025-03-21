@@ -31,6 +31,6 @@ spec:
     app: health-care-eta-deploy
   type: NodePort
   ports:
-  - nodePort: 31030  
+  - nodePort: 31031
     port: 8082
     targetPort: 8082
