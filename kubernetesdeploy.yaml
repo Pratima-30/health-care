@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: health-care-eta-deploy
+  name: health-care-eta-app
   labels:
     app: health-care-eta-deploy
 spec:
